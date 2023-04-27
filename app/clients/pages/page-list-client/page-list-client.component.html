@@ -1,0 +1,36 @@
+
+<h1>{{title}}</h1>
+
+<table class="table">
+  <!-- en tête du tableau -->
+  <thead>
+    <tr>
+      <th *ngFor="let item of headers" scope="col">{{item}}</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of tab">
+      <td>Action</td>
+      <td>{{item.state}}</td>
+      <td>{{item.tva}}</td>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.totalCaHt | totalCaht: item.tva | currency}}</td>
+      <td>Total TTC</td>
+      <td>{{item.comment}}</td>
+    </tr>
+  </tbody>
+
+  <app-btn label="Ajouter"styleBtn="btn btn-primary"route="/clients/add"></app-btn>
+
+</table>
+<!--
+
+  ajouter un pipe total totalCaht * tva /fais
+  ajouter pipe currency € / fais
+  ajouter btn et lui passer des valeurs / en cours
+  dans clients/add, ajouter un composant form-client
+  dans le composant form-client ajouter les inputs
+
+ -->

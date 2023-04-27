@@ -1,0 +1,50 @@
+<!-- {{}} = Stirng interpolation -->
+<!-- <h1 class="title">{{ title }}</h1> -->
+<!-- Ajouter des composant -->
+<!-- composant statique -->
+
+<!-- composant dynamoique en fonction de l'url -->
+
+<header class="fixed-top">
+
+  <!-- créer composant header et afficher -->
+  <app-header></app-header>
+
+  <!-- Ajout évenement au click -->
+  <button (click)='onClick()'>
+    <!-- Directive -->
+    <app-icon-nav *ngIf='open'></app-icon-nav>
+    <app-icon-close *ngIf='!open'></app-icon-close>
+
+  </button>
+
+
+  <!-- J'utilise un composant qui contient une icone birger menu + croix -->
+  <!-- créer module icons -->
+  <!-- créer deux component icons -->
+
+
+</header>
+<!-- Ici on alterne la classe close-aside en fonction de la valeur de open -->
+<main [ngClass]="{'close-aside' : open}">
+  <div class="shadow position-fixed">
+  </div>
+  <aside>
+    <div class="scroller">
+      <app-nav><router-outlet></router-outlet></app-nav>
+      </div>
+    </aside>
+    <div class="page">
+      <div class="contents">
+
+        <!-- Ici on va avoir des composent dynamiqes -->
+        <router-outlet></router-outlet>
+      </div>
+      <footer>
+
+        <!-- Créer un composant -->
+        <app-footer></app-footer>
+
+      </footer>
+    </div>
+  </main>

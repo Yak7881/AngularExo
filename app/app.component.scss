@@ -1,0 +1,89 @@
+// .title{
+//     color: red;
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/// Description design of user interface
+// <header>
+header {
+  height: 65px;
+  background: var(#ffffff);
+  padding: 0 15px;
+  display: flex; // aligner
+  align-items: center;
+}
+
+main {
+  background: #ebedf2;
+  min-height: calc(100vh - 65px);
+  padding-top: 65px;
+}
+
+aside {
+  background: #d1d1d1;
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  z-index: 1000;
+
+  .scroller {
+    overflow-y: auto;
+    max-height: 100vh;
+    padding-bottom: 65px;
+  }
+}
+
+.close-aside aside {
+  display: none;
+}
+
+.close-aside .shadow {
+  display: none;
+}
+
+// .shadow {
+//   background: #525252;
+//   opacity: 0.8;
+//   width: 100%;
+//   min-height: 100vh;
+//   z-index: 1000;
+// }
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 65px);
+}
+
+.contents {
+  flex-grow: 1;
+}
+
+footer {
+  background: #b8b8b8;
+}
+
+button {
+  border: none;
+}
+
+// media queries
+@media (min-width: 768px) {
+  .shadow {
+    display: none;
+  }
+
+  .contents,
+  footer {
+    margin-left: 250px;
+  }
+
+  .close-aside .contents,
+  .close-aside footer {
+    margin-left: 0;
+  }
+}
